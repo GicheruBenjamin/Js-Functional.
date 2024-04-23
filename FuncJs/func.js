@@ -32,3 +32,23 @@ const multiplyByTwo = num => num * 2;
 const addFive = num => num + 5;
 const composedFunction = num => addFive(multiplyByTwo(num));
 console.log(composedFunction(2)); 
+
+//Closures
+function cook(ingredient) {
+    function prepare() {
+        return `Prepared ${ingredient}`;
+    }
+    return prepare;
+}
+
+const pizzaPreparation = cook('pizza');
+console.log(pizzaPreparation()); 
+
+//Currying
+function checkProp(location){
+    return function(value){
+        return `Since the prop is in ${location} so it is valued at ${value}`;
+    }
+}
+let expensive = checkProp('Paris')
+console.log(expensive(1000000));
