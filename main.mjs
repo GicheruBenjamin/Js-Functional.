@@ -3,7 +3,8 @@ import { Spreadarray } from "./FuncJs/imm.mjs";
 import { Factorial } from "./FuncJs/Rec.mjs";
 import { Blend, Removeimpurities } from "./FuncJs/Comp.mjs";
 import { Cook, Providekeys } from "./FuncJs/Close.mjs";
-import { Hasprops } from "./FuncJs/Curr.mjs";
+import { CurryAdd } from "./FuncJs/Curr.mjs";
+
 
 function main() {
     const result = Add(2, 3);
@@ -41,6 +42,12 @@ function main() {
     const hasProps = Hasprops(["a", "b"]);
     console.log(hasProps({ a: 1, b: 2, c: 3 }));
     console.log("------------------");
+
+    const curryAdd = CurryAdd(2);
+    const add3 = curryAdd(3);
+    console.log(add3);
+    console.log("------------------");
+
 
     
 }
